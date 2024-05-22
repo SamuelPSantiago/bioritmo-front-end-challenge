@@ -1,7 +1,6 @@
 # Resolução do desafio proposto pela Bioritmo
+> Link do repositório do desafio: https://github.com/bioritmo/front-end-code-challenge-smartsite
 
-<h6>Link do repositório do desafio: https://github.com/bioritmo/front-end-code-challenge-smartsite<h6/>
-  
 ## O desafio consistia em 3 pontos principais:
   #### - A construção do site.
   #### - A estilização do site.
