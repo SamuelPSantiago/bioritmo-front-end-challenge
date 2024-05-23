@@ -60,38 +60,9 @@ export const LegendTextTitle = styled.p`
     color: ${Black};
 `
 
-export const FooterTextBody = styled.p`
-    width: 100%;
-    height: auto;
-
-    font-family: 'Gotham', sans-serif;
-    font-weight: 300;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    font-size: 16px;
-    text-align: center;
-
-    color: ${White};
-`
-
 // Área do cabeçalho
 
 export const Header = styled.header``
-
-export const TopHeader = styled.div`
-    background-color: ${Black};
-    width: 100%;
-    height: 110px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-
-export const LogoHeader = styled.img`
-    width: auto;
-    height: 65px;
-`
 
 export const BottomHeader = styled.div`
     margin: 75px 10% 0 10%;
@@ -226,29 +197,4 @@ export const IconLegend = styled.img`
     margin: 15px 0 0 0;
     width: 70px;
     height: auto;
-`
-
-// Área do rodapé
-
-export const Footer = styled.footer`
-    margin: 65px 0 0 0;
-
-    width: 100%;
-    height: auto;
-
-    padding: 50px 0 110px 0;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background-color: ${DarkGrey};
-`
-
-export const LogoFooter = styled.img`
-    margin: 0 0 20px 0;
-
-    width: auto;
-    height: 40px;
 `

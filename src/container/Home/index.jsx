@@ -1,15 +1,15 @@
-import { TextTitle, TextBody, LegendTextTitle, VariationLegendTextBody, FooterTextBody } from "./style"
-import { Header, TopHeader, LogoHeader, BottomHeader, BottomHeaderSpacer } from "./style"
+import Footer from '../../components/Footer'
+import TopLogo from '../../components/TopLogo'
+
+import { TextTitle, TextBody, LegendTextTitle, VariationLegendTextBody } from "./style"
+import { Header, BottomHeader, BottomHeaderSpacer } from "./style"
 import { Legend, Area1Legend, Area2Legend, ContainerVariationLegend, Variation1Legend, Variation2Legend, Variation3Legend, IconLegend } from "./style"
-import { Footer, LogoFooter } from "./style"
 
 function Home() {
     return (
         <>
             <Header>
-                <TopHeader>
-                    <LogoHeader src={'./logo.svg'} alt="logo"/>
-                </TopHeader>
+                <TopLogo/>
                 <BottomHeader>
                     <TextTitle>REABERTURA <br/ > SMART FIT</TextTitle>
                     <BottomHeaderSpacer></BottomHeaderSpacer>
@@ -80,10 +80,7 @@ function Home() {
             <div>
 
             </div>
-            <Footer>
-                <LogoFooter src={'./logo.svg'} alt="logo"/>
-                <FooterTextBody>Todos os direitos reservados - 2020</FooterTextBody>
-            </Footer>
+            <Footer/>
         </>
     )
 }
