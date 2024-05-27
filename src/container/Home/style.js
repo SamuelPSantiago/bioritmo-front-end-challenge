@@ -45,7 +45,7 @@ export const QuestionFormTextTitle = styled.h1`
 
 
 export const LabelForm = styled.h2`
-    margin: 0 8px 0 8px;
+    margin: 0 8px 0 10px;
     font-family: 'Gotham', sans-serif;
     font-weight: 400;
     font-size: 17px;
@@ -60,7 +60,7 @@ export const ResultNumberForm = styled.h1`
     font-size: 22px;
     letter-spacing: 0.3px;
 
-    color: ${Black};
+    color: ${DarkGrey};
 `
 
 export const LegendTextTitle = styled.p`
@@ -177,11 +177,24 @@ export const QuestionForm = styled.div`
     border-bottom: 2px solid ${LightGrey};
 `
 
-export const ItemForm = styled.input`
+export const ItemForm = styled.input.attrs({ type: 'radio' })`
     width: 18px;
     height: 18px;
 
+    border: 2px solid ${Grey};
+    border-radius: 100%;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+
     cursor: pointer;
+
+    &:checked {
+        background-color: ${Grey};
+        border: 2px solid ${Grey};
+    }
 `
 
 export const Line1Form = styled.div`
@@ -217,13 +230,23 @@ export const SubLineForm = styled.div`
     justify-content: left;
 `
 
-export const FilterForm = styled.input`
+export const FilterForm = styled.input.attrs({ type: 'checkbox' })`
     width: 18px;
     height: 18px;
 
-    border: 1px solid ${LightGrey};
+    border: 2px solid ${Grey};
+    border-radius: 2px;
 
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
     cursor: pointer;
+
+    &:checked {
+        background-color: ${Grey};
+        border: 2px solid ${Grey};
+    }
 `
 
 export const ButtonsForm = styled.div`
@@ -271,7 +294,7 @@ export const ClearButtonForm = styled.button`
     color: ${Black};
 
     cursor: pointer;
-` 
+`
 
 // Área das legendas
 
