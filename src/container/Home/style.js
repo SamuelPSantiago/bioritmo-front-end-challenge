@@ -23,6 +23,58 @@ export const TextTitle = styled.h1`
     color: ${DarkGrey};
 `
 
+export const HeaderFormTextTitle = styled.h1`
+    font-family: 'Gotham', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+
+    color: ${Grey};
+`
+
+export const QuestionFormTextTitle = styled.h1`
+    margin: 0 0 11px 10px;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 300;
+    font-size: 27px;
+    line-height: 34px;
+    letter-spacing: 0.3px;
+
+    color: ${Grey};
+`
+
+
+export const LabelForm = styled.h2`
+    margin: 0 8px 0 8px;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.3px;
+
+    color: ${Black};
+`
+
+export const ResultNumberForm = styled.h1`
+    font-family: 'Gotham', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.3px;
+
+    color: ${Black};
+`
+
+export const LegendTextTitle = styled.p`
+    width: 100%;
+    height: auto;
+
+    font-family: 'Gotham', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    text-align: center;
+
+    color: ${Black};
+`
+
 export const TextBody = styled.p`
     width: 100%;
     height: auto;
@@ -36,6 +88,17 @@ export const TextBody = styled.p`
     color: ${DarkGrey};
 `
 
+export const TimeFormTextBody = styled.h1`
+    margin: 0 0 0 10px;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 45px;
+    letter-spacing: 0.3px;
+
+    color: ${Grey};
+`
+
 export const VariationLegendTextBody = styled.p`
     width: 100%;
     height: auto;
@@ -43,18 +106,6 @@ export const VariationLegendTextBody = styled.p`
     font-family: 'Gotham', sans-serif;
     font-weight: 400;
     font-size: 17px;
-    text-align: center;
-
-    color: ${Black};
-`
-
-export const LegendTextTitle = styled.p`
-    width: 100%;
-    height: auto;
-
-    font-family: 'Gotham', sans-serif;
-    font-weight: 900;
-    font-size: 16px;
     text-align: center;
 
     color: ${Black};
@@ -79,6 +130,148 @@ export const BottomHeaderSpacer = styled.div`
 
     background-color: ${DarkGrey};
 `
+
+// Área do formulário de busca
+
+export const Form = styled.form`
+    margin: 45px 10% 0 10%;
+
+    width: 80%;
+    height: auto;
+    
+    padding: 20px 0 20px 0;
+
+    border-radius: 10px;
+    border: 3px solid ${LightGrey};
+    border-bottom-width: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+export const HeaderForm = styled.div`
+    margin: 0 25px 20px 25px;
+
+    width: calc(100% - 50px);
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+`
+
+export const IconHeaderForm = styled.img`
+    margin: 0 9px 0 0;
+
+    width: 30px;
+    height: auto;
+`
+
+export const QuestionForm = styled.div`
+    margin: 0 25px 0 25px 0;
+
+    width: calc(100% - 50px);
+    height: auto;
+
+    border-bottom: 2px solid ${LightGrey};
+`
+
+export const ItemForm = styled.input`
+    width: 18px;
+    height: 18px;
+
+    cursor: pointer;
+`
+
+export const Line1Form = styled.div`
+    margin: 0 25px 0 25px;
+
+    width: calc(100% - 50px);
+    height: auto;
+
+    border-bottom: 2px solid ${LightGrey};
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`
+
+export const Line2Form = styled.div`
+    margin: 50px 25px 25px 25px;
+
+    width: calc(100% - 50px);
+    height: auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`
+
+export const SubLineForm = styled.div`
+    width: auto;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+`
+
+export const FilterForm = styled.input`
+    width: 18px;
+    height: 18px;
+
+    border: 1px solid ${LightGrey};
+
+    cursor: pointer;
+`
+
+export const ButtonsForm = styled.div`
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+`
+
+export const SearchButtonForm = styled.button`
+    width: 300px;
+    height: 50px;
+
+    border-radius: 3px;
+    border: none;
+
+    background-color: ${Yellow};
+
+    font-family: 'Gotham', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+
+    color: ${Black};
+
+    cursor: pointer;
+`
+export const ClearButtonForm = styled.button`
+    width: 300px;
+    height: 50px;
+
+    border-radius: 3px;
+    border: 2px solid ${LightGrey};
+
+    background-color: ${White};
+
+    font-family: 'Gotham', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+
+    color: ${Black};
+
+    cursor: pointer;
+` 
 
 // Área das legendas
 
