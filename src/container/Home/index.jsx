@@ -1,3 +1,8 @@
+import React, { useState } from 'react';
+
+import getUnits from '../../services/getUnits';
+import filterUnits from '../../services/filterUnits';
+
 import Footer from '../../components/Footer'
 import TopLogo from '../../components/TopLogo'
 
@@ -7,6 +12,46 @@ import { Form, HeaderForm, IconHeaderForm, QuestionForm, ItemForm, Line1Form, Li
 import { Legend, Area1Legend, Area2Legend, ContainerVariationLegend, Variation1Legend, Variation2Legend, Variation3Legend, IconLegend } from "./style"
 
 function Home() {
+    //Armazenamento da quantidade de resultados vindos do formulário
+    const [resultsFound, setResultsFound] = useState('0');
+
+    //Armazenamento dos dados do formulário
+    const [formData, setFormData] = useState({
+        timeFilter: '',
+        closeFilter: false
+    });
+
+    //Função de setar os dados do formulário
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: type === 'checkbox' ? checked : value
+        }));
+    };
+
+    //Função de limpar o formulário
+    const handleClearForm = () => {
+        setFormData({
+            timeFilter: '',
+            closeFilter: false
+        });
+        setResultsFound('0');
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+    
+        try {
+            var data = await getUnits(); //Recebe os dados da API
+            var dataFiltered = await filterUnits(data, formData); //Filtra os dados recebidos
+
+            setResultsFound(dataFiltered.total); //Altera a quantidade de resultados para exibir na tela
+        } catch (error) {
+            console.error('Error in handleSubmit:', error);
+        }
+    };
+
     return (
         <>
             <Header>
@@ -17,7 +62,7 @@ function Home() {
                     <TextBody>O horário de funcionamento das nossas unidades está seguindo os decretos de cada município. Por isso, confira aqui se a sua unidade está aberta e as medidas de segurança que estamos seguindo.</TextBody>
                 </BottomHeader>
             </Header>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <HeaderForm>
                     <IconHeaderForm src={'./icon-hour.png'} alt="IconTimeForm" />
                     <HeaderFormTextTitle>Horário</HeaderFormTextTitle>
@@ -27,38 +72,64 @@ function Home() {
                 </QuestionForm>
                 <Line1Form>
                     <SubLineForm>
-                        <ItemForm type='radio' name="time"></ItemForm>
+                        <ItemForm
+                            type='radio'
+                            id="timeFilterM"
+                            name="timeFilter"
+                            value="M"
+                            checked={formData.timeFilter === 'M'}
+                            onChange={handleChange}
+                        />
                         <TimeFormTextBody>Manhã</TimeFormTextBody>
                     </SubLineForm>
                     <TimeFormTextBody>06:00 às 12:00</TimeFormTextBody>
                 </Line1Form>
                 <Line1Form>
                     <SubLineForm>
-                        <ItemForm type='radio' name="time"></ItemForm>
+                        <ItemForm
+                            type='radio'
+                            id="timeFilterT"
+                            name="timeFilter"
+                            value="T"
+                            checked={formData.timeFilter === 'T'}
+                            onChange={handleChange}
+                        />
                         <TimeFormTextBody>Tarde</TimeFormTextBody>
                     </SubLineForm>
                     <TimeFormTextBody>12:01 às 18:00</TimeFormTextBody>
                 </Line1Form>
                 <Line1Form>
                     <SubLineForm>
-                        <ItemForm type='radio' name="time"></ItemForm>
+                        <ItemForm
+                            type='radio'
+                            id="timeFilterN"
+                            name="timeFilter"
+                            value="N"
+                            checked={formData.timeFilter === 'N'}
+                            onChange={handleChange}
+                        />
                         <TimeFormTextBody>Noite</TimeFormTextBody>
                     </SubLineForm>
                     <TimeFormTextBody>18:01 às 23:00</TimeFormTextBody>
                 </Line1Form>
                 <Line2Form>
                     <SubLineForm>
-                        <FilterForm type="checkbox" if="oc"></FilterForm>
+                        <FilterForm
+                            type="checkbox"
+                            name="closeFilter"
+                            checked={formData.closeFilter}
+                            onChange={handleChange}
+                        />
                         <LabelForm>Exibir unidades fechadas</LabelForm>
                     </SubLineForm>
                     <SubLineForm>
                         <LabelForm>Resultados encontrados:</LabelForm>
-                        <ResultNumberForm>0</ResultNumberForm>
+                        <ResultNumberForm>{resultsFound}</ResultNumberForm>
                     </SubLineForm>
                 </Line2Form>
                 <ButtonsForm>
-                    <SearchButtonForm type="submit">ENCONTRAR UNIDADE</SearchButtonForm>
-                    <ClearButtonForm>LIMPAR</ClearButtonForm>
+                    <SearchButtonForm type="submit" >ENCONTRAR UNIDADE</SearchButtonForm>
+                    <ClearButtonForm type="button" onClick={handleClearForm}>LIMPAR</ClearButtonForm>
                 </ButtonsForm>
             </Form>
             <Legend>

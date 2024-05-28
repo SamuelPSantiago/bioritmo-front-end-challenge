@@ -191,9 +191,18 @@ export const ItemForm = styled.input.attrs({ type: 'radio' })`
 
     cursor: pointer;
 
+    &:hover {
+        border: 2px solid ${DarkGrey};
+    }
+
     &:checked {
-        background-color: ${Grey};
         border: 2px solid ${Grey};
+        background-color: ${Grey};
+    }
+
+    &:checked:hover {
+        border: 2px solid ${DarkGrey};
+        background-color: ${DarkGrey};
     }
 `
 
@@ -241,11 +250,21 @@ export const FilterForm = styled.input.attrs({ type: 'checkbox' })`
     -webkit-appearance: none;
     -moz-appearance: none;
     outline: none;
+    
     cursor: pointer;
 
+    &:hover {
+        border: 2px solid ${DarkGrey};
+    }
+
     &:checked {
-        background-color: ${Grey};
         border: 2px solid ${Grey};
+        background-color: ${Grey};
+    }
+
+    &:checked:hover {
+        border: 2px solid ${DarkGrey};
+        background-color: ${DarkGrey};
     }
 `
 
