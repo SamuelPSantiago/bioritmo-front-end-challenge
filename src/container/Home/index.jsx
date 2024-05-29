@@ -8,7 +8,7 @@ import TopLogo from '../../components/TopLogo'
 
 import { TextTitle, HeaderFormTextTitle, QuestionFormTextTitle, LegendTextTitle, TextBody, TimeFormTextBody, VariationLegendTextBody } from "./style"
 import { Header, BottomHeader, BottomHeaderSpacer } from "./style"
-import { Form, HeaderForm, IconHeaderForm, QuestionForm, ItemForm, Line1Form, Line2Form, SubLineForm, FilterForm, LabelForm, ResultNumberForm, ButtonsForm, SearchButtonForm, ClearButtonForm } from './style'
+import { Form, HeaderForm, IconHeaderForm, QuestionForm, ItemForm, Line1Form, Line2Form, SubLineForm, FilterForm, Label1Form, Label2Form, ResultNumberForm, ButtonsForm, SearchButtonForm, ClearButtonForm } from './style'
 import { Legend, Area1Legend, Area2Legend, ContainerVariationLegend, Variation1Legend, Variation2Legend, Variation3Legend, IconLegend } from "./style"
 
 function Home() {
@@ -41,7 +41,7 @@ function Home() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-    
+
         try {
             var data = await getUnits(); //Recebe os dados da API
             var dataFiltered = await filterUnits(data, formData); //Filtra os dados recebidos
@@ -120,10 +120,10 @@ function Home() {
                             checked={formData.closeFilter}
                             onChange={handleChange}
                         />
-                        <LabelForm>Exibir unidades fechadas</LabelForm>
+                        <Label1Form>Exibir unidades fechadas</Label1Form>
                     </SubLineForm>
                     <SubLineForm>
-                        <LabelForm>Resultados encontrados:</LabelForm>
+                        <Label2Form>Resultados encontrados:</Label2Form>
                         <ResultNumberForm>{resultsFound}</ResultNumberForm>
                     </SubLineForm>
                 </Line2Form>
@@ -191,7 +191,34 @@ function Home() {
                 </Area1Legend>
             </Legend>
             <div>
-
+                <div>
+                    <div>
+                        <h2>Aberto</h2>
+                        <h1>Vicente Linhares</h1>
+                        <p>Rua Tiburcio Cavalcante, 1885 - Meireles</p>
+                        <p>Fortaleza, CE</p>
+                    </div>
+                    <div>
+                        <img/>
+                        <img/>
+                        <img/>
+                        <img/>
+                    </div>
+                    <div>
+                        <div>
+                            <h1>Seg. à Sex.</h1>
+                            <h2>06h às 22h</h2>
+                        </div>
+                        <div>
+                            <h1>Sáb.</h1>
+                            <h2>09h às 18h</h2>
+                        </div>
+                        <div>
+                            <h1>Dom.</h1>
+                            <h2>Fechada</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
             <Footer />
         </>

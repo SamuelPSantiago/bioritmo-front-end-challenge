@@ -44,14 +44,39 @@ export const QuestionFormTextTitle = styled.h1`
 `
 
 
-export const LabelForm = styled.h2`
-    margin: 0 8px 0 10px;
+export const Label1Form = styled.h2`
+    margin: 0 0 0 10px;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+
+    color: ${Black};
+
+    @media (max-width: 370px) {
+        font-size: 15px;
+    }
+
+    @media (min-width: 370px) {
+        font-size: 17px;
+    }
+`
+
+export const Label2Form = styled.h2`
+    margin: 0 8px 0 0;
     font-family: 'Gotham', sans-serif;
     font-weight: 400;
     font-size: 17px;
     letter-spacing: 0.3px;
 
     color: ${Black};
+
+    @media (max-width: 370px) {
+        font-size: 15px;
+    }
+
+    @media (min-width: 370px) {
+        font-size: 17px;
+    }
 `
 
 export const ResultNumberForm = styled.h1`
@@ -92,11 +117,18 @@ export const TimeFormTextBody = styled.h1`
     margin: 0 0 0 10px;
     font-family: 'Gotham', sans-serif;
     font-weight: 300;
-    font-size: 18px;
     line-height: 45px;
     letter-spacing: 0.3px;
 
     color: ${Grey};
+
+    @media (max-width: 370px) {
+        font-size: 17px;
+    }
+
+    @media (min-width: 370px) {
+        font-size: 18px;
+    }
 `
 
 export const VariationLegendTextBody = styled.p`
@@ -169,7 +201,7 @@ export const IconHeaderForm = styled.img`
 `
 
 export const QuestionForm = styled.div`
-    margin: 0 25px 0 25px 0;
+    margin: 0 25px 13px 25px;
 
     width: calc(100% - 50px);
     height: auto;
@@ -228,6 +260,16 @@ export const Line2Form = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 770px) {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    @media (min-width: 770px) {
+        flex-direction: row;
+        gap: 20px;
+    }
 `
 
 export const SubLineForm = styled.div`
@@ -272,14 +314,22 @@ export const ButtonsForm = styled.div`
     width: 100%;
     height: auto;
 
-    display: flex;
+    display: flex;  
     align-items: center;
     justify-content: center;
-    gap: 20px;
+
+    @media (max-width: 840px) {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    @media (min-width: 840px) {
+        flex-direction: row;
+        gap: 20px;
+    }
 `
 
 export const SearchButtonForm = styled.button`
-    width: 300px;
     height: 50px;
 
     border-radius: 3px;
@@ -295,9 +345,16 @@ export const SearchButtonForm = styled.button`
     color: ${Black};
 
     cursor: pointer;
+
+    @media (max-width: 430px) {
+        width: calc(100% - 40px);
+    }
+
+    @media (min-width: 430px) {
+        width: 300px;
+    }
 `
 export const ClearButtonForm = styled.button`
-    width: 300px;
     height: 50px;
 
     border-radius: 3px;
@@ -313,6 +370,14 @@ export const ClearButtonForm = styled.button`
     color: ${Black};
 
     cursor: pointer;
+
+    @media (max-width: 430px) {
+        width: calc(100% - 40px);
+    }
+
+    @media (min-width: 430px) {
+        width: 300px;
+    }
 `
 
 // Área das legendas
