@@ -17,5 +17,5 @@
 
 ### Docker
 Para acessar a página, basta dentro do cmd e no diretório do projeto executar estes comandos:
-> docker build -t bioritmo-frontend . <br/>
-> docker run -p 5173:5173 bioritmo-frontend
+> docker build -t bioritmo-front-end-challenge . <br/>
+> docker run -p 5173:5173 bioritmo-front-end-challenge
