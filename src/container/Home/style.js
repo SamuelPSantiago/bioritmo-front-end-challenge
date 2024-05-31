@@ -188,7 +188,7 @@ export const VariationList2TextBody = styled.p`
     color: ${Grey};
 `
 
-export const ConditionTextBody = styled.p`
+export const Condition1TextBody = styled.p`
     width: 100%;
     height: auto;
 
@@ -199,6 +199,19 @@ export const ConditionTextBody = styled.p`
     font-size: 18px;
 
     color: ${Green};
+`
+
+export const Condition2TextBody = styled.p`
+    width: 100%;
+    height: auto;
+
+    font-family: 'Gotham', sans-serif;
+    font-weight: 700;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-size: 18px;
+
+    color: ${Red};
 `
 
 // Container geral
