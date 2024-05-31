@@ -100,6 +100,26 @@ export const LegendTextTitle = styled.p`
     color: ${Black};
 `
 
+export const VariationList1TextTitle = styled.h1`
+    font-family: 'Gotham', sans-serif;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 45px;
+    letter-spacing: 0.3px;
+
+    color: ${DarkGrey};
+`
+
+export const VariationList2TextTitle = styled.h1`
+    font-family: 'Gotham', sans-serif;
+    font-weight: 700;
+    font-size: 21.6px;
+    line-height: 45px;
+    letter-spacing: 0.3px;
+
+    color: ${DarkGrey};
+`
+
 export const TextBody = styled.p`
     width: 100%;
     height: auto;
@@ -142,10 +162,63 @@ export const VariationLegendTextBody = styled.p`
 
     color: ${Black};
 `
+export const VariationList1TextBody = styled.p`
+    width: 100%;
+    height: auto;
+
+    font-family: 'Gotham', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-size: 16px;
+
+    color: ${DarkGrey};
+`
+
+export const VariationList2TextBody = styled.p`
+    width: 100%;
+    height: auto;
+
+    font-family: 'Gotham', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-size: 14px;
+
+    color: ${Grey};
+`
+
+export const ConditionTextBody = styled.p`
+    width: 100%;
+    height: auto;
+
+    font-family: 'Gotham', sans-serif;
+    font-weight: 700;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-size: 18px;
+
+    color: ${Green};
+`
+
+// Container geral
+
+export const Container = styled.div`
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
 
 // Área do cabeçalho
 
-export const Header = styled.header``
+export const Header = styled.header`
+    width: 100%;
+    height: auto;
+`
 
 export const BottomHeader = styled.div`
     margin: 75px 10% 0 10%;
@@ -496,5 +569,90 @@ export const Variation3Legend = styled.div`
 export const IconLegend = styled.img`
     margin: 15px 0 0 0;
     width: 70px;
+    height: auto;
+`
+
+export const ContainerList = styled.div`
+    margin: 45px 0 0 0;
+
+    width: auto;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+export const List = styled.div`
+    height: auto;
+
+    display: grid;
+    gap: 20px;
+
+    @media (max-width: 740px) {
+        grid-template-columns: repeat(1, 1fr);
+        width: 315px;
+    }
+
+    @media (min-width: 740px) and (max-width: 1100px) {
+        grid-template-columns: repeat(2, 1fr);
+        width: 650px;
+    }
+
+    @media (min-width: 1100px) and (max-width: 1540px) {
+        grid-template-columns: repeat(3, 1fr);
+        width: 965px;
+    }
+
+    @media (min-width: 1540px) {
+        grid-template-columns: repeat(4, 1fr);
+        width: 1300px;
+    }
+`;
+
+export const AcademyList = styled.div`
+    padding: 20px;
+
+    width: 100%;
+    max-width: 275px;
+    height: auto;
+
+    border-radius: 9px;
+    background-color: ${LightGrey};
+
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+`;
+
+export const HeaderAcademyList = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+`
+
+export const StatusAcademyList = styled.div`
+    margin: 20px 0 0 0;
+
+    border-top: 1.5px solid ${Grey};
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`
+
+export const IconList = styled.img`
+    margin: 25px 0 10px 0;
+    width: 68px;
+    height: auto;
+`
+
+export const ScheduleAcademyList = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+`
+
+export const TimeScheduleAcademyList = styled.div`
+    margin: 0 0 20px 0;
+    
+    width: 100%;
     height: auto;
 `

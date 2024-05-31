@@ -6,10 +6,12 @@ import filterUnits from '../../services/filterUnits';
 import Footer from '../../components/Footer'
 import TopLogo from '../../components/TopLogo'
 
-import { TextTitle, HeaderFormTextTitle, QuestionFormTextTitle, LegendTextTitle, TextBody, TimeFormTextBody, VariationLegendTextBody } from "./style"
+import { TextTitle, HeaderFormTextTitle, QuestionFormTextTitle, LegendTextTitle, VariationList1TextTitle, VariationList2TextTitle, TextBody, TimeFormTextBody, VariationLegendTextBody, VariationList1TextBody, VariationList2TextBody, ConditionTextBody } from "./style"
+import { Container } from "./style"
 import { Header, BottomHeader, BottomHeaderSpacer } from "./style"
 import { Form, HeaderForm, IconHeaderForm, QuestionForm, ItemForm, Line1Form, Line2Form, SubLineForm, FilterForm, Label1Form, Label2Form, ResultNumberForm, ButtonsForm, SearchButtonForm, ClearButtonForm } from './style'
 import { Legend, Area1Legend, Area2Legend, ContainerVariationLegend, Variation1Legend, Variation2Legend, Variation3Legend, IconLegend } from "./style"
+import { ContainerList, List, AcademyList, HeaderAcademyList, StatusAcademyList, IconList, ScheduleAcademyList, TimeScheduleAcademyList } from "./style"
 
 function Home() {
     //Armazenamento da quantidade de resultados vindos do formulário
@@ -53,7 +55,7 @@ function Home() {
     };
 
     return (
-        <>
+        <Container>
             <Header>
                 <TopLogo />
                 <BottomHeader>
@@ -190,38 +192,152 @@ function Home() {
                     </ContainerVariationLegend>
                 </Area1Legend>
             </Legend>
-            <div>
-                <div>
-                    <div>
-                        <h2>Aberto</h2>
-                        <h1>Vicente Linhares</h1>
-                        <p>Rua Tiburcio Cavalcante, 1885 - Meireles</p>
-                        <p>Fortaleza, CE</p>
-                    </div>
-                    <div>
-                        <img/>
-                        <img/>
-                        <img/>
-                        <img/>
-                    </div>
-                    <div>
-                        <div>
-                            <h1>Seg. à Sex.</h1>
-                            <h2>06h às 22h</h2>
-                        </div>
-                        <div>
-                            <h1>Sáb.</h1>
-                            <h2>09h às 18h</h2>
-                        </div>
-                        <div>
-                            <h1>Dom.</h1>
-                            <h2>Fechada</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <ContainerList>
+                <List>
+                    <AcademyList>
+                        <HeaderAcademyList>
+                            <ConditionTextBody>Aberto</ConditionTextBody>
+                            <VariationList1TextTitle>Vicente Linhares</VariationList1TextTitle>
+                            <VariationList2TextBody>Rua Tiburcio Cavalcante, 1885 - Meireles</VariationList2TextBody>
+                            <VariationList2TextBody>Fortaleza, CE</VariationList2TextBody>
+                        </HeaderAcademyList>
+                        <StatusAcademyList>
+                            <IconList src={'./required-mask.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./required-towel.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./partial-fountain.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./forbidden-lockerroom.png'} alt="IconLegend"></IconList>
+                        </StatusAcademyList>
+                        <ScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Seg. à Sex.</VariationList2TextTitle>
+                                <VariationList1TextBody>06h às 22h</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Sáb.</VariationList2TextTitle>
+                                <VariationList1TextBody>09h às 18h</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Dom.</VariationList2TextTitle>
+                                <VariationList1TextBody>Fechada</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                        </ScheduleAcademyList>
+                    </AcademyList>
+                    <AcademyList>
+                        <HeaderAcademyList>
+                            <ConditionTextBody>Aberto</ConditionTextBody>
+                            <VariationList1TextTitle>Vicente Linhares</VariationList1TextTitle>
+                            <VariationList2TextBody>Rua Tiburcio Cavalcante, 1885 - Meireles</VariationList2TextBody>
+                            <VariationList2TextBody>Fortaleza, CE</VariationList2TextBody>
+                        </HeaderAcademyList>
+                        <StatusAcademyList>
+                            <IconList src={'./required-mask.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./required-towel.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./partial-fountain.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./forbidden-lockerroom.png'} alt="IconLegend"></IconList>
+                        </StatusAcademyList>
+                        <ScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Seg. à Sex.</VariationList2TextTitle>
+                                <VariationList1TextBody>06h às 22h</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Sáb.</VariationList2TextTitle>
+                                <VariationList1TextBody>09h às 18h</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Dom.</VariationList2TextTitle>
+                                <VariationList1TextBody>Fechada</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                        </ScheduleAcademyList>
+                    </AcademyList>
+                    <AcademyList>
+                        <HeaderAcademyList>
+                            <ConditionTextBody>Aberto</ConditionTextBody>
+                            <VariationList1TextTitle>Vicente Linhares</VariationList1TextTitle>
+                            <VariationList2TextBody>Rua Tiburcio Cavalcante, 1885 - Meireles</VariationList2TextBody>
+                            <VariationList2TextBody>Fortaleza, CE</VariationList2TextBody>
+                        </HeaderAcademyList>
+                        <StatusAcademyList>
+                            <IconList src={'./required-mask.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./required-towel.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./partial-fountain.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./forbidden-lockerroom.png'} alt="IconLegend"></IconList>
+                        </StatusAcademyList>
+                        <ScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Seg. à Sex.</VariationList2TextTitle>
+                                <VariationList1TextBody>06h às 22h</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Sáb.</VariationList2TextTitle>
+                                <VariationList1TextBody>09h às 18h</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Dom.</VariationList2TextTitle>
+                                <VariationList1TextBody>Fechada</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                        </ScheduleAcademyList>
+                    </AcademyList>
+                    <AcademyList>
+                        <HeaderAcademyList>
+                            <ConditionTextBody>Aberto</ConditionTextBody>
+                            <VariationList1TextTitle>Vicente Linhares</VariationList1TextTitle>
+                            <VariationList2TextBody>Rua Tiburcio Cavalcante, 1885 - Meireles</VariationList2TextBody>
+                            <VariationList2TextBody>Fortaleza, CE</VariationList2TextBody>
+                        </HeaderAcademyList>
+                        <StatusAcademyList>
+                            <IconList src={'./required-mask.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./required-towel.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./partial-fountain.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./forbidden-lockerroom.png'} alt="IconLegend"></IconList>
+                        </StatusAcademyList>
+                        <ScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Seg. à Sex.</VariationList2TextTitle>
+                                <VariationList1TextBody>06h às 22h</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Sáb.</VariationList2TextTitle>
+                                <VariationList1TextBody>09h às 18h</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Dom.</VariationList2TextTitle>
+                                <VariationList1TextBody>Fechada</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                        </ScheduleAcademyList>
+                    </AcademyList>
+                    <AcademyList>
+                        <HeaderAcademyList>
+                            <ConditionTextBody>Aberto</ConditionTextBody>
+                            <VariationList1TextTitle>Vicente Linhares</VariationList1TextTitle>
+                            <VariationList2TextBody>Rua Tiburcio Cavalcante, 1885 - Meireles</VariationList2TextBody>
+                            <VariationList2TextBody>Fortaleza, CE</VariationList2TextBody>
+                        </HeaderAcademyList>
+                        <StatusAcademyList>
+                            <IconList src={'./required-mask.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./required-towel.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./partial-fountain.png'} alt="IconLegend"></IconList>
+                            <IconList src={'./forbidden-lockerroom.png'} alt="IconLegend"></IconList>
+                        </StatusAcademyList>
+                        <ScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Seg. à Sex.</VariationList2TextTitle>
+                                <VariationList1TextBody>06h às 22h</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Sáb.</VariationList2TextTitle>
+                                <VariationList1TextBody>09h às 18h</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                            <TimeScheduleAcademyList>
+                                <VariationList2TextTitle>Dom.</VariationList2TextTitle>
+                                <VariationList1TextBody>Fechada</VariationList1TextBody>
+                            </TimeScheduleAcademyList>
+                        </ScheduleAcademyList>
+                    </AcademyList>
+                </List>
+            </ContainerList>
             <Footer />
-        </>
+        </Container>
     )
 }
 
