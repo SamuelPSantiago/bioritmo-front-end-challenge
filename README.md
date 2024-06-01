@@ -15,6 +15,10 @@
 > Durante a parte de estilização do site foi usada o package: `styled-component` <br/>
 > Todo o projeto foi colocado em um container do Docker
 
+### Vercel
+Você pode acessar e testar todo o projeto atráves do link abaixo:
+> https://bioritmo-front-end-challenge.vercel.app
+
 ### Docker
 A imagem está disponivel no repositório:
 > https://hub.docker.com/repository/docker/samuelpinheiro/bioritmo-front-end-challenge/
