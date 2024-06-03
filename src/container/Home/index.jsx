@@ -210,7 +210,8 @@ function Home() {
                         <ScheduleAcademyList>
                             <TimeScheduleAcademyList>
                                 <VariationList2TextTitle>Seg. à Sex.</VariationList2TextTitle>
-                                <VariationList1TextBody>06h às 22h</VariationList1TextBody>
+                                <VariationList1TextBody>06h às 11h</VariationList1TextBody>
+                                <VariationList1TextBody>13h às 22h</VariationList1TextBody>
                             </TimeScheduleAcademyList>
                             <TimeScheduleAcademyList>
                                 <VariationList2TextTitle>Sáb.</VariationList2TextTitle>

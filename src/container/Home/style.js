@@ -628,7 +628,7 @@ export const AcademyList = styled.div`
 
     width: 100%;
     max-width: 275px;
-    height: auto;
+    height: 478px;
 
     border-radius: 9px;
     background-color: ${LightGrey};
