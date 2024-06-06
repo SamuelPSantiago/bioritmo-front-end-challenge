@@ -11,7 +11,7 @@
 - Filtragem de informação
 - Exibição das informações obtidas pela requisição
 
-### Dadas as informações apresentadas a tecnologia que eu escolhi para a resolução do problema foi o `React.js` em conjunto com o `Vite.js`.
+### Dadas as informações apresentadas a tecnologia que eu escolhi para a resolução do problema foi o React.js em conjunto com o Vite.js.
 > Durante a parte de estilização do site foi usada o package: `styled-component` <br/>
 > Todo o projeto foi colocado em um container do `Docker`
 
