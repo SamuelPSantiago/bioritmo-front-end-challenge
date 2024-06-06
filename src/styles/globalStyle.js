@@ -6,28 +6,28 @@ const GlobalStyles = createGlobalStyle`
 
     @font-face {
         font-family: 'Gotham';
-        src: url('/src/assets/fonts/gotham-light.woff2') format('woff2');
+        src: url('/fonts/gotham-light.woff2') format('woff2');
         font-weight: 300;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Gotham';
-        src: url('/src/assets/fonts/gotham-book.woff2') format('woff2');
+        src: url('/fonts/gotham-book.woff2') format('woff2');
         font-weight: 400;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Gotham';
-        src: url('/src/assets/fonts/gotham-bold.woff2') format('woff2');
+        src: url('/fonts/gotham-bold.woff2') format('woff2');
         font-weight: 700;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Gotham';
-        src: url('/src/assets/fonts/gotham-black.woff2') format('woff2');
+        src: url('/fonts/gotham-black.woff2') format('woff2');
         font-weight: 900;
         font-style: normal;
     }
