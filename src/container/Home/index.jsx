@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import getUnits from '../../services/getUnits';
 import filterUnits from '../../services/filterUnits';
@@ -14,8 +14,9 @@ import { Legend, Area1Legend, Area2Legend, ContainerVariationLegend, Variation1L
 import { ContainerList, List, AcademyList, HeaderAcademyList, StatusAcademyList, IconList, ScheduleAcademyList, TimeScheduleAcademyList } from "./style"
 
 function Home() {
-    //Armazenamento da quantidade de resultados vindos do formulário
+    //Armazenamento de dados
     const [resultsFound, setResultsFound] = useState('0');
+    const [results, setResults] = useState();
 
     //Armazenamento dos dados do formulário
     const [formData, setFormData] = useState({
@@ -41,6 +42,7 @@ function Home() {
         setResultsFound('0');
     };
 
+    //Função de fazer a busca por unidades
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -48,11 +50,34 @@ function Home() {
             var data = await getUnits(); //Recebe os dados da API
             var dataFiltered = await filterUnits(data, formData); //Filtra os dados recebidos
 
+            setResults(dataFiltered.dataFiltered);
             setResultsFound(dataFiltered.total); //Altera a quantidade de resultados para exibir na tela
+
+            console.log(dataFiltered.dataFiltered);
         } catch (error) {
             console.error('Error in handleSubmit:', error);
         }
     };
+
+    //Função para limpar a string do endereço
+    function parseAddress(str) {
+        let lines = str
+            .replace(/<span.*?>.*?<\/span>/g, '')
+            .replace(/<p>|<\/p>/g, '')
+            .split('<br>')
+            .map(item => 
+                item
+                    .replace(/(&#8211;\s*)+/g, '– ')
+                    .replace(/&#8217;/g, "'")
+                    .trim()
+            );
+
+        return [
+            lines[0],
+            lines[1],
+        ];
+    }
+
 
     return (
         <Container>
@@ -169,7 +194,7 @@ function Home() {
                             <VariationLegendTextBody>Parcial</VariationLegendTextBody>
                         </Variation2Legend>
                         <Variation2Legend>
-                            <IconLegend src={'./forbidden-fountain.png'} alt="IconLegend"></IconLegend>
+                            <IconLegend src={'./not_allowed-fountain.png'} alt="IconLegend"></IconLegend>
                             <VariationLegendTextBody>Proibido</VariationLegendTextBody>
                         </Variation2Legend>
                     </ContainerVariationLegend>
@@ -178,7 +203,7 @@ function Home() {
                     <LegendTextTitle>Vestiários</LegendTextTitle>
                     <ContainerVariationLegend>
                         <Variation3Legend>
-                            <IconLegend src={'./required-lockerroom.png'} alt="IconLegend"></IconLegend>
+                            <IconLegend src={'./allowed-lockerroom.png'} alt="IconLegend"></IconLegend>
                             <VariationLegendTextBody>Liberado</VariationLegendTextBody>
                         </Variation3Legend>
                         <Variation3Legend>
@@ -186,7 +211,7 @@ function Home() {
                             <VariationLegendTextBody>Parcial</VariationLegendTextBody>
                         </Variation3Legend>
                         <Variation3Legend>
-                            <IconLegend src={'./forbidden-lockerroom.png'} alt="IconLegend"></IconLegend>
+                            <IconLegend src={'./closed-lockerroom.png'} alt="IconLegend"></IconLegend>
                             <VariationLegendTextBody>Proibido</VariationLegendTextBody>
                         </Variation3Legend>
                     </ContainerVariationLegend>
@@ -194,43 +219,37 @@ function Home() {
             </Legend>
             <ContainerList>
                 <List>
-                    <AcademyList>
-                        <HeaderAcademyList>
-                            <Condition1TextBody>Aberto</Condition1TextBody>
-                            <VariationList1TextTitle>Vicente Linhares</VariationList1TextTitle>
-                            <VariationList2TextBody>Rua Tiburcio Cavalcante, 1885 - Meireles</VariationList2TextBody>
-                            <VariationList2TextBody>Fortaleza, CE</VariationList2TextBody>
-                        </HeaderAcademyList>
-                        <StatusAcademyList>
-                            <IconList src={'./required-mask.png'} alt="IconLegend"></IconList>
-                            <IconList src={'./required-towel.png'} alt="IconLegend"></IconList>
-                            <IconList src={'./partial-fountain.png'} alt="IconLegend"></IconList>
-                            <IconList src={'./forbidden-lockerroom.png'} alt="IconLegend"></IconList>
-                        </StatusAcademyList>
-                        <ScheduleAcademyList>
-                            <TimeScheduleAcademyList>
-                                <VariationList2TextTitle>Seg. à Sex.</VariationList2TextTitle>
-                                <VariationList1TextBody>06h às 11h</VariationList1TextBody>
-                                <VariationList1TextBody>13h às 22h</VariationList1TextBody>
-                            </TimeScheduleAcademyList>
-                            <TimeScheduleAcademyList>
-                                <VariationList2TextTitle>Sáb.</VariationList2TextTitle>
-                                <VariationList1TextBody>09h às 18h</VariationList1TextBody>
-                            </TimeScheduleAcademyList>
-                            <TimeScheduleAcademyList>
-                                <VariationList2TextTitle>Dom.</VariationList2TextTitle>
-                                <VariationList1TextBody>Fechada</VariationList1TextBody>
-                            </TimeScheduleAcademyList>
-                        </ScheduleAcademyList>
-                    </AcademyList>
-                    <AcademyList>
-                        <HeaderAcademyList>
-                            <Condition2TextBody>Fechada</Condition2TextBody>
-                            <VariationList1TextTitle>Vicente Linhares</VariationList1TextTitle>
-                            <VariationList2TextBody>Rua Tiburcio Cavalcante, 1885 - Meireles</VariationList2TextBody>
-                            <VariationList2TextBody>Fortaleza, CE</VariationList2TextBody>
-                        </HeaderAcademyList>
-                    </AcademyList>
+                    {results && results.length > 0 && results.map(result => (
+                        <AcademyList key={result.id}>
+                            <HeaderAcademyList>
+                                <Condition1TextBody>{result.opened ? 'Aberto' : 'Fechado'}</Condition1TextBody>
+                                <VariationList1TextTitle>{result.title.replace(/&#8217;/g, "'").trim()}</VariationList1TextTitle>
+                                <VariationList2TextBody>{parseAddress(result.content)[0]}</VariationList2TextBody>
+                                <VariationList2TextBody>{parseAddress(result.content)[1]}</VariationList2TextBody>
+                            </HeaderAcademyList>
+                            <StatusAcademyList>
+                                <IconList src={`./${result.mask}-mask.png`} alt="IconLegend"></IconList>
+                                <IconList src={`./${result.towel}-towel.png`} alt="IconLegend"></IconList>
+                                <IconList src={`./${result.fountain}-fountain.png`} alt="IconLegend"></IconList>
+                                <IconList src={`./${result.locker_room}-lockerroom.png`} alt="IconLegend"></IconList>
+                            </StatusAcademyList>
+                            <ScheduleAcademyList>
+                                <TimeScheduleAcademyList>
+                                    <VariationList2TextTitle>Seg. à Sex.</VariationList2TextTitle>
+                                    <VariationList1TextBody>06h às 11h</VariationList1TextBody>
+                                    <VariationList1TextBody>13h às 22h</VariationList1TextBody>
+                                </TimeScheduleAcademyList>
+                                <TimeScheduleAcademyList>
+                                    <VariationList2TextTitle>Sáb.</VariationList2TextTitle>
+                                    <VariationList1TextBody>09h às 18h</VariationList1TextBody>
+                                </TimeScheduleAcademyList>
+                                <TimeScheduleAcademyList>
+                                    <VariationList2TextTitle>Dom.</VariationList2TextTitle>
+                                    <VariationList1TextBody>Fechada</VariationList1TextBody>
+                                </TimeScheduleAcademyList>
+                            </ScheduleAcademyList>
+                        </AcademyList>
+                    ))}
                 </List>
             </ContainerList>
             <Footer />
